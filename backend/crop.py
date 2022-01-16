@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 
+
 class Crop:
     def __init__(self, x1, y1, x2, y2, x3, y3, x4, y4, inpFileName, outFileName):
         self.x1=x1
