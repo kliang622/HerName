@@ -1,11 +1,15 @@
 .herName {
-  font-size: 3em;
   text-align: center;
   position: absolute;
   top: 50%;
   left: 50%;
 
   transform: translate(-50%, -50%);
+}
+
+.empower {
+  text-align: center;
+  padding: 1em;
 }
 
 body {
@@ -17,21 +21,27 @@ body {
 }
 
 .main_headers {
+  font-size: 10em;
+  color: #ffa69e;
+}
+.subtitle {
+  font-size: 3em;
+  color: #5e6472;
+  line-height: 1.1em;
+}
+
+.sec_headers {
+  font-size: 5em;
   color: #ffa69e;
 }
 
-.subtitle {
+.normal_txt {
+  font-size: 1.9em;
   color: #5e6472;
-  line-height: 10px;
 }
 
 .home_page {
-  padding: 33em;
-}
-
-.upload_page {
-  position: relative top;
-  margin: top;
+  padding: 31em;
 }
 
 .uploads {
@@ -41,7 +51,7 @@ body {
 .upload_image {
   font-family: "Asap", sans-serif;
   position: center;
-  padding: 33em;
+  padding: 31em;
 }
 
 input[type="submit"] {
