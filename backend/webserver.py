@@ -1,5 +1,6 @@
 import os
 import uuid
+import json
 
 from flask import Flask, flash, request, redirect, url_for 
 from werkzeug.utils import secure_filename 
@@ -13,6 +14,9 @@ app.config['UPLOAD_FOLDER'] = 'uploads/'
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1000 * 1000 #limits max allowed payload to 16 mg, if it's bigger Flask raises RequestEntityTooLarge exception
 app.secret_key = uuid.uuid4().hex
 
+
+#export FLASK_APP=webserver
+#export GOOGLE_APPLICATION_CREDENTIALS="/home/natem135/Downloads/rosehack2022-f178de763729.json"
 
 def allowed_file(filename): 
     return '.' in filename and \
@@ -41,12 +45,14 @@ def upload_file():
             filename = secure_filename(file.filename) #returns secure version of filename, so it can be stored safely on file system
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             n = detect_faces(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-
+            with open(f'descriptions/{n[:-4]}.json') as f:
+                d=json.load(f)
             #return redirect(url_for('download_file', name=filename))
             return f'''
                 <!doctype HTML>
                 <title>suck ess</title>
-                <h1>This person is: {n}</h1>
+                <h1>Your Match Is: {d['name']}</h1>
+                <p>{d['description']}</p>
             '''
         #else:
             #print("ayo ayo ayo ayo ayo this no work :(")
