@@ -1,7 +1,3 @@
-#grad {
-  background-image: linear-gradient(red, yellow);
-}
-
 div {
   font-size: 3em;
   text-align: center;
@@ -17,4 +13,11 @@ body {
   background: #faf3dd;
 
   font-family: "Asap", sans-serif;
+}
+
+label {
+  color: red;
+}
+input {
+  width: 100%;
 }
