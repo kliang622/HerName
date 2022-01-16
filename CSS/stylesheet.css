@@ -85,16 +85,19 @@ input[type="file"] {
 }
 
 input[type="submit"] {
-  width: 500px;
-  color: blue;
-  border: none;
-  padding: 16px 32px;
+  width: 250px;
+  color: #5e6472;
+
+  padding: 10px 15px;
   font-size: large;
   font-weight: bold;
-  margin: 4px 2px;
+  margin: 3px 2px;
   position: center;
-  background-color: yellowgreen;
-  font-family: "Times New Roman", Times, serif;
+  background-color: #ffa69e;
+  font-family: "Asap", sans-serif;
+  text-align: center;
+  border-radius: 14px;
+  border-color: #ffa69f;
 }
 
 label {
