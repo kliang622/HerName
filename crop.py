@@ -1,61 +1,44 @@
 import cv2
 import numpy as np
 
+class Crop:
+    def __init__(self, x1, y1, x2, y2, x3, y3, x4, y4, inpFileName, outFileName):
+        self.x1=x1
+        self.x2=x2
+        self.x3=x3
+        self.x4=x4
+        self.y1=y1
+        self.y2=y2
+        self.y3=y3
+        self.y4=y4
+        self.inpFileName=inpFileName
+        self.outFilename=outFileName
+    def generate_crop(self):
+        img = cv2.imread(self.inpFileName)
+        cnt = np.array([[[self.x1, self.y1]],
+                    [[self.x2, self.y2]],
+                    [[self.x3, self.y3]],
+                    [[self.x4, self.y4]]
+                    ])
+        rect = cv2.minAreaRect(cnt)
+        print("rect: {}".format(rect))
+        box = cv2.boxPoints(rect)
+        box = np.int0(box)
+        print("bounding box: {}".format(box))
+        cv2.drawContours(img, [box], 0, (0, 0, 255), 2)
+        im_crop = self.crop_rect(img, rect)
+        cv2.imwrite(self.outFilename, im_crop)
 
-def main():
-    img = cv2.imread("test_image.jpeg")
-    
-    # assume coord is a list with 8 float values, the points of the rectangle area should
-    # have be clockwise
-    #x1, y1, x2, y2, x3, y3, x4, y4 = coord
-    ##(133,89),(171,89),(171,133),(133,133)
-    cnt = np.array([[[133, 89]],
-                [[171, 89]],
-                [[171, 133]],
-                [[133, 133]]
-                ])
-    # cv2.drawContours(img, [cnt], 0, (128, 255, 0), 3)
-    # find the rotated rectangle enclosing the contour
-    # rect has 3 elments, the first is rectangle center, the second is
-    # width and height of the rectangle and the third is the rotation angle
-    rect = cv2.minAreaRect(cnt)
-    print("rect: {}".format(rect))
-    # convert rect to 4 points format
-    box = cv2.boxPoints(rect)
-    box = np.int0(box)
-    print("bounding box: {}".format(box))
+    def crop_rect(self, img, rect):
+        center = rect[0]
+        size = rect[1]
+        angle = rect[2]
+        center, size = tuple(map(int, center)), tuple(map(int, size))
 
-    # draw the roated rectangle box in the image
-    cv2.drawContours(img, [box], 0, (0, 0, 255), 2)
-    
-    # crop the rotated rectangle from the image
-    im_crop = crop_rect(img, rect)
-    # print("size of original img: {}".format(img.shape))
-    # print("size of rotated img: {}".format(img_rot.shape))
-    # print("size of cropped img: {}".format(im_crop.shape))
-    
-    cv2.imshow("cropped_box", im_crop)
-    cv2.imshow("original contour", img)
-    
-    cv2.waitKey(0)
+        # get row and col num in img
+        rows, cols = img.shape[0], img.shape[1]
 
-# this function is base on post at https://goo.gl/Q92hdp
-def crop_rect(img, rect):
-    # get the parameter of the small rectangle
-    center = rect[0]
-    size = rect[1]
-    angle = rect[2]
-    center, size = tuple(map(int, center)), tuple(map(int, size))
+        M = cv2.getRotationMatrix2D(center, angle, 1)
+        out = cv2.getRectSubPix(img, size, center)
 
-    # get row and col num in img
-    rows, cols = img.shape[0], img.shape[1]
-
-    M = cv2.getRotationMatrix2D(center, angle, 1)
-    img_rot = cv2.warpAffine(img, M, (cols, rows))
-    out = cv2.getRectSubPix(img, size, center)
-
-    return out
-
-
-if __name__ == "__main__":
-    main()
+        return out
