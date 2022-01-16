@@ -15,8 +15,11 @@ body {
   font-family: "Asap", sans-serif;
 }
 
-label {
-  color: red;
+label
+{
+    color: red; 
+    
+
 }
 input {
   width: 100%;
