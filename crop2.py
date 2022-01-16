@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 class Crop:
-    def __init__(self, x1, y1, x2, y2, x3, y3, x4, y4, filename):
+    def __init__(self, x1, y1, x2, y2, x3, y3, x4, y4, inpFileName, outFileName):
         self.x1=x1
         self.x2=x2
         self.x3=x3
@@ -11,9 +11,10 @@ class Crop:
         self.y2=y2
         self.y3=y3
         self.y4=y4
-        self.filename=filename
+        self.inpFileName=inpFileName
+        self.outFilename=outFileName
     def generate_crop(self):
-        img = cv2.imread("test_image.jpeg")
+        img = cv2.imread(self.inpFileName)
         cnt = np.array([[[self.x1, self.y1]],
                     [[self.x2, self.y2]],
                     [[self.x3, self.y3]],
@@ -26,7 +27,7 @@ class Crop:
         print("bounding box: {}".format(box))
         cv2.drawContours(img, [box], 0, (0, 0, 255), 2)
         im_crop = self.crop_rect(img, rect)
-        cv2.imwrite('out.jpg', im_crop)
+        cv2.imwrite(self.outFilename, im_crop)
 
     def crop_rect(self, img, rect):
         center = rect[0]
