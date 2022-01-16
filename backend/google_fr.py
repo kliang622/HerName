@@ -29,8 +29,17 @@ def detect_faces(path):
         # print('surprise: {}'.format(likelihood_name[face.surprise_likelihood]))
 
         vertices = ([(vertex.x, vertex.y) for vertex in face.bounding_poly.vertices])
-        img = Crop(vertices[0][0], vertices[0][1], vertices[1][0], vertices[1][1], vertices[2][0], vertices[2][1], vertices[3][0], vertices[3][1], "ccdcteam.png", f"tmp/{uuid.uuid4().hex}.png")
+        folder = uuid.uuid4().hex
+        img = Crop(vertices[0][0], vertices[0][1], vertices[1][0], vertices[1][1], vertices[2][0], vertices[2][1], vertices[3][0], vertices[3][1], path, f"../tmp/{folder}/{folder}.png")
         img.generate_crop()
+        min = 101
+        min_str = ""
+        # for file in images:
+        val = compareImages(f"../tmp/{folder}/{folder}.png", "filename in folder")
+        # if val < min:
+        # min_str = ""
+        
+        
 
     if response.error.message:
         raise Exception(
