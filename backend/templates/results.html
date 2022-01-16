@@ -15,7 +15,7 @@
             Learn more about her.
         </p>
 
-        <img class= "picture_result" src={{ "static/images/"+name.lower().replace(' ', '')+".png" }}>
+        <img class= "picture_result" src={{ "static/images/"+name.lower().replace(' ', '').replace('-','')+".png" }}>
         <h2 class ="results_name">{{name}}</h2>
         <p class="results_description">{{desc}}</p>
     </div>
