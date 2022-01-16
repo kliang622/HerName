@@ -12,6 +12,12 @@
   padding: 1em;
 }
 
+.uploads {
+  font-family: "Asap", sans-serif;
+  text-align: center;
+  padding: 0.5em;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -44,14 +50,37 @@ body {
   padding: 31em;
 }
 
-.uploads {
-  font-family: "Asap", sans-serif;
+.results_page {
+  text-align: center;
 }
 
 .upload_image {
   font-family: "Asap", sans-serif;
-  position: center;
-  padding: 31em;
+  padding: 5em;
+}
+
+.upload_text {
+  font-size: 40px;
+  font-family: "Asap", sans-serif;
+  position: fixed;
+}
+
+input[type="file"] {
+  color: green;
+  padding: 5em 15em;
+}
+
+.picture_result {
+  width: 300px;
+  height: 200px;
+  font-weight: lighter;
+  font-family: "asap", sans-serif;
+}
+
+.results_description {
+  text-align: left;
+  font-family: "asap", sans-serif;
+  font-weight: normal;
 }
 
 input[type="submit"] {

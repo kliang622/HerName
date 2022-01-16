@@ -48,22 +48,33 @@
         </div>
     </section>
 
-    <section class = "upload_page" id = "upload"> 
+    <section class = "upload_page" > 
         <div class ="uploads">
+            <h2 class ="sec_headers">connect</h2>
+            <p class ="normal_txt">
+                Upload a photo of yourself here and see who you match up with.
+            </p>
             <form action="index.php" method="post" enctype = "multipart/form-data"> 
                 <p class=upload_image>
                 <label for ="image"> 
-                        <span> Upload an Image:</span>
+
                 </label>
+                
                 <input type ="file" name="file1" >
 
                 <input type ="submit"  value="See Results!" >
                 </p>
             </form>
-        </div>
-    </section>
+       </div>
+    </section> 
 
-    <section class = "results page" id = "results"> 
+    <section class = "results_page"> 
+        <div class= "img_wrapper" >
+            <h2 class="results_text"> Your Results!</h2>
+            <img class= "picture_result" src="https://www.akc.org/wp-content/uploads/2017/11/Pembroke-Welsh-Corgi-standing-outdoors-in-the-fall.jpg%22%3E"> 
+            <h2 class="results_text"> Cool Facts about your match! </h2>
+            <h4 class="results_description"> Description A paragraph is a self-contained unit of discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</h4>
+        </div>
 
     </section>
 
