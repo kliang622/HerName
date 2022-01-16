@@ -7,7 +7,7 @@ body {
 
   font-family: "Asap", sans-serif;
 }
-h1 {
+.nameTitle {
   font-size: 5.5em;
   margin: 0;
   padding: 0;
@@ -27,6 +27,7 @@ h2 {
 label
 {
     color: red; 
+    
 }
 input 
 {
