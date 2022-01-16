@@ -1,6 +1,4 @@
-#grad {
-  background-image: linear-gradient(red, yellow);
-}
+
 
 body {
   padding: 0;
@@ -24,3 +22,14 @@ h2 {
   font-size: 5em;
   text-align: center;
 }
+
+
+label
+{
+    color: red; 
+}
+input 
+{
+    width: 100%;
+}
+
