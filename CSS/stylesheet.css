@@ -12,8 +12,7 @@ body {
   padding: 0;
   margin: 0;
   background: #faf3dd;
-  
-  
+
   font-family: "Asap", sans-serif;
 }
 
@@ -31,30 +30,28 @@ body {
 }
 
 .upload_page {
-  position: relative top; 
-  margin: top; 
+  position: relative top;
+  margin: top;
 }
 
 .uploads {
   font-family: "Asap", sans-serif;
-    
 }
 
 label {
-    color: red; 
-    font-size: 16px;
+  color: red;
+  font-size: 16px;
 }
 
 .section {
-  padding: 2rem 0 4rem; 
-} 
+  padding: 2rem 0 4rem;
+}
 
 input {
   width: 100%;
-  color: blue; 
+  color: blue;
 }
 
- .section 
-{
-  padding: 2rem 0 4rem; 
-} 
+.section {
+  padding: 2rem 0 4rem;
+}
