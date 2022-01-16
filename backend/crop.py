@@ -28,7 +28,8 @@ class Crop:
         print("bounding box: {}".format(box))
         cv2.drawContours(img, [box], 0, (0, 0, 255), 2)
         im_crop = self.crop_rect(img, rect)
-        cv2.imwrite(self.outFilename, im_crop)
+        print(self.outFilename + "outfileoutfile")
+        cv2.imwrite(f'./../tmp/{self.outFilename[7:]}', im_crop)
 
     def crop_rect(self, img, rect):
         center = rect[0]

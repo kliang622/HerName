@@ -1,6 +1,8 @@
 from crop import Crop
 import uuid
 from compare import compareImages
+from os import listdir
+
 
 #export GOOGLE_APPLICATION_CREDENTIALS="/home/natem135/Downloads/rosehack2022-f178de763729.json"
 
@@ -29,22 +31,33 @@ def detect_faces(path):
         # print('surprise: {}'.format(likelihood_name[face.surprise_likelihood]))
 
         vertices = ([(vertex.x, vertex.y) for vertex in face.bounding_poly.vertices])
-        folder = uuid.uuid4().hex
-        img = Crop(vertices[0][0], vertices[0][1], vertices[1][0], vertices[1][1], vertices[2][0], vertices[2][1], vertices[3][0], vertices[3][1], path, f"../tmp/{folder}/{folder}.png")
+        folder = uuid.uuid4().hex[1:15]
+        img = Crop(vertices[0][0], vertices[0][1], vertices[1][0], vertices[1][1], vertices[2][0], vertices[2][1], vertices[3][0], vertices[3][1], path, f"../tmp/{folder}.png")
         img.generate_crop()
         min = 101
         min_str = ""
-        # for file in images:
-        val = compareImages(f"../tmp/{folder}/{folder}.png", "filename in folder")
-        # if val < min:
-        # min_str = ""
+        for filename in listdir('images/'):
+            try:
+                val = compareImages(f"../tmp/{folder}.png", f"images/{filename}")
+                if val < min:
+                    min_str = filename
+                    min = val
+                print(f"{val}:{filename}")
+            except:
+                print(f"{filename} broke the thing")
+        print(f'{path} is most similar to:')
+        print(min_str)
+
         
-        
+    
 
     if response.error.message:
         raise Exception(
             '{}\nFor more info on error messages, check: '
             'https://cloud.google.com/apis/design/errors'.format(
                 response.error.message))
+    
 
-detect_faces('/home/natem135/Downloads/FaMousse/ccdcteam.png')
+#detect_faces('kanin.jpeg')
+#detect_faces('danialqt.jpeg')
+detect_faces('rj.jpeg')
