@@ -3,8 +3,8 @@
 }
 
 .picture_result {
-  width: 300px;
-  height: 200px;
+  width: 450px;
+  height: 350px;
   font-weight: lighter;
 
   text-align: center;
@@ -47,5 +47,6 @@
 }
 body {
   background-color: #faf3dd;
+
   padding: 0.5em 20.5em;
 }

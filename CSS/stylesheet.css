@@ -22,6 +22,7 @@ body {
   padding: 0;
   margin: 0;
   background: #faf3dd;
+  background-image: linear-gradient(#faf3dd, #fceba6);
 
   font-family: "Asap", sans-serif;
 }
