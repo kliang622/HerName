@@ -1,5 +1,6 @@
 from crop import Crop
 import uuid
+from compare import compareImages
 
 #export GOOGLE_APPLICATION_CREDENTIALS="/home/natem135/Downloads/rosehack2022-f178de763729.json"
 
