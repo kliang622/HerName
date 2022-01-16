@@ -15,6 +15,19 @@ body {
   font-family: "Asap", sans-serif;
 }
 
+.main_headers {
+  color: #ffa69e;
+}
+
+.subtitle {
+  color: #5e6472;
+  line-height: 10px;
+}
+
+.home_page {
+  padding: 33em;
+}
+
 label {
   color: red;
 }
