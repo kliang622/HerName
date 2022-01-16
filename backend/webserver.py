@@ -2,17 +2,18 @@ import os
 import uuid
 import json
 
-from flask import Flask, flash, request, redirect, url_for 
+from flask import Flask, flash, request, redirect, url_for, render_template
 from werkzeug.utils import secure_filename 
 from google_fr import detect_faces
 
 UPLOAD_FOLDER = 'uploads/' #where we store uploaded files
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'} #set of allowed file extensions 
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static/', template_folder='templates/')
 app.config['UPLOAD_FOLDER'] = 'uploads/'
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1000 * 1000 #limits max allowed payload to 16 mg, if it's bigger Flask raises RequestEntityTooLarge exception
 app.secret_key = uuid.uuid4().hex
+
 
 
 #export FLASK_APP=webserver
@@ -24,16 +25,16 @@ def allowed_file(filename):
 
 @app.route("/")
 def hello_world():
-    return "<p>yooooo</p>"
+    return render_template('index.html')
 
-@app.route('/submitImage', methods=['GET', 'POST'])
+@app.route('/submitImage', methods=['POST'])
 def upload_file():
     if request.method == 'POST': #check if the post request has the file part 
         if 'file' not in request.files: 
             flash('No file part')
-            #for k in request.files:
-                #print(k)
-            #print(len(request.files))
+            for k in request.files:
+                print(k)
+            print(len(request.files))
             return redirect(request.url)
         file = request.files['file']
         if file.filename == ' ': #if user doesn't select file, browser submits an empty file w/o filename 
@@ -69,9 +70,4 @@ def upload_file():
 @app.route("/results")
 def results():
     d = json.loads(request.args['data'])
-    return f'''
-    <!doctype HTML>
-    <title>suck ess</title>
-    <h1>Your Match Is: {d['name']}</h1>
-    <p>{d['description']}</p>
-    '''
+    return render_template('results.html', name=d['name'], desc=d['description'])
