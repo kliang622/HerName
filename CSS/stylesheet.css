@@ -38,18 +38,28 @@ body {
   font-family: "Asap", sans-serif;
 }
 
+.upload_image {
+  font-family: "Asap", sans-serif;
+  position: center;
+  padding: 33em;
+}
+
+input[type="submit"] {
+  width: 500px;
+  color: blue;
+  border: none;
+  padding: 16px 32px;
+  font-size: large;
+  font-weight: bold;
+  margin: 4px 2px;
+  position: center;
+  background-color: yellowgreen;
+  font-family: "Times New Roman", Times, serif;
+}
+
 label {
   color: red;
   font-size: 16px;
-}
-
-.section {
-  padding: 2rem 0 4rem;
-}
-
-input {
-  width: 100%;
-  color: blue;
 }
 
 .section {
