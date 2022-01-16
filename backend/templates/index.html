@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+
+<head>
+    <meta charset="UFT-8">
+    <meta  name = "viewport" content = "width=device-width, initial-scale = 1.0">
+    
+    <!--for icons, stylesheet-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel = "stylesheet" href = {{ url_for('static', filename='css/stylesheet.css')}}>
+
+    <!--for fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;700&display=swap" rel="stylesheet">
+    
+
+
+    <title>Her Name</title>
+</head>
+
+<body>
+    <main>
+    <section class = "home_page" id = "home"> 
+        <div class = "herName">
+            <h1 class ="main_headers">Her Name</h1>
+            <p class = "subtitle">Empower.&emsp;&emsp;Connect.&emsp;&emsp;Learn.</p>
+        </div>
+
+    </section>
+
+    <section class = "description page" id = "description"> 
+        <div class = "empower">
+            <h2 class ="sec_headers">empower</h2>
+            <p class ="normal_txt">
+                Everyone knows of the story of how Mark Zuckerberg created Facebook in his college dorm.
+                This story is in itself astonishing - yet, there is less heard about the world's first computer programmer named Ada Lovelace.
+            </p>
+
+            <p class ="normal_txt">
+                Continue through our site to learn more about female tech innovators and entrepreneurs that often go unheard
+                of today through a simple upload of a photo.
+            </p>
+
+            <p class ="normal_txt">
+                You will then be connected to a noteable female tech innovator and entrepreneur. Learn more about her
+                and share your newfound knowledge with others.
+            </p>
+        </div>
+    </section>
+
+    <section class = "upload_page" > 
+        <div class ="uploads">
+            <h2 class ="sec_headers">connect</h2>
+            <p class ="normal_txt">
+                Upload a photo of yourself here and see who you match up with.
+            </p>
+            <form action="/submitImage" method="post" enctype = "multipart/form-data"> 
+                <p class=upload_image>
+                <label for ="image"> 
+
+                </label>
+
+                <input type ="file" name="file">
+
+                <input type ="submit"  value="See Results!" >
+                </p>
+            </form>
+       </div>
+    </section> 
+
+  </main>
+
+</body>
+
+
+</html>
