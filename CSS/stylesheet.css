@@ -1,4 +1,4 @@
-div {
+.herName {
   font-size: 3em;
   text-align: center;
   position: absolute;
@@ -11,16 +11,36 @@ body {
   padding: 0;
   margin: 0;
   background: #faf3dd;
+  
+  
+  
 
   font-family: "Asap", sans-serif;
 }
 
+.upload_page
+{
+  position: relative top; 
+  margin: top; 
+
+}
 label
 {
     color: red; 
+    font-size: 16px;
     
 
 }
+.uploads {
+  font-family: "Asap", sans-serif;
+    
+}
 input {
   width: 100%;
+  color: blue; 
 }
+
+ .section 
+{
+  padding: 2rem 0 4rem; 
+} 
