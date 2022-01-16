@@ -47,13 +47,13 @@ def upload_file():
             n = detect_faces(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             with open(f'descriptions/{n[:-4]}.json') as f:
                 d=json.load(f)
-            #return redirect(url_for('download_file', name=filename))
-            return f'''
-                <!doctype HTML>
-                <title>suck ess</title>
-                <h1>Your Match Is: {d['name']}</h1>
-                <p>{d['description']}</p>
-            '''
+            return redirect(url_for('results', data=json.dumps(d)))
+            #return f'''
+            #    <!doctype HTML>
+            #    <title>suck ess</title>
+            #    <h1>Your Match Is: {d['name']}</h1>
+            #    <p>{d['description']}</p>
+            #'''
         #else:
             #print("ayo ayo ayo ayo ayo this no work :(")
     return '''
@@ -64,4 +64,14 @@ def upload_file():
         <input type=file name=file>
         <input type=submit value=Upload>
     </form>
+    '''
+
+@app.route("/results")
+def results():
+    d = json.loads(request.args['data'])
+    return f'''
+    <!doctype HTML>
+    <title>suck ess</title>
+    <h1>Your Match Is: {d['name']}</h1>
+    <p>{d['description']}</p>
     '''
