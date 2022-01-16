@@ -1,4 +1,4 @@
-from crop2 import Crop
+from crop import Crop
 import uuid
 
 #export GOOGLE_APPLICATION_CREDENTIALS="/home/natem135/Downloads/rosehack2022-f178de763729.json"
