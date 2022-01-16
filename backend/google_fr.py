@@ -47,6 +47,7 @@ def detect_faces(path):
                 print(f"{filename} broke the thing")
         print(f'{path} is most similar to:')
         print(min_str)
+        return min_str
 
         
     
@@ -56,8 +57,3 @@ def detect_faces(path):
             '{}\nFor more info on error messages, check: '
             'https://cloud.google.com/apis/design/errors'.format(
                 response.error.message))
-    
-
-#detect_faces('kanin.jpeg')
-#detect_faces('danialqt.jpeg')
-detect_faces('rj.jpeg')

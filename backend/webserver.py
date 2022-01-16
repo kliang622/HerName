@@ -3,9 +3,10 @@ import uuid
 
 from flask import Flask, flash, request, redirect, url_for 
 from werkzeug.utils import secure_filename 
+from google_fr import detect_faces
 
 UPLOAD_FOLDER = 'uploads/' #where we store uploaded files
-ALLOWED_EXTENSIONS = {'pdf', 'png', 'jpg', 'jpeg'} #set of allowed file extensions 
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'} #set of allowed file extensions 
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads/'
@@ -21,7 +22,7 @@ def allowed_file(filename):
 def hello_world():
     return "<p>yooooo</p>"
 
-@app.route('/aaa', methods=['GET', 'POST'])
+@app.route('/submitImage', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST': #check if the post request has the file part 
         if 'file' not in request.files: 
@@ -39,11 +40,13 @@ def upload_file():
             #print("this *is* working dabdab")
             filename = secure_filename(file.filename) #returns secure version of filename, so it can be stored safely on file system
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            n = detect_faces(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+
             #return redirect(url_for('download_file', name=filename))
-            return '''
+            return f'''
                 <!doctype HTML>
                 <title>suck ess</title>
-                <h1>your fle has been uploaded yipe</h1>
+                <h1>This person is: {n}</h1>
             '''
         #else:
             #print("ayo ayo ayo ayo ayo this no work :(")
