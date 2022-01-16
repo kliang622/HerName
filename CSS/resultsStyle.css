@@ -1,0 +1,52 @@
+.results_page {
+  text-align: center;
+}
+
+.picture_result {
+  width: 450px;
+  height: 350px;
+  font-weight: lighter;
+
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.results_name {
+  text-align: center;
+  color: #5e6472;
+  font-size: 1.9em;
+  font-family: "Asap", sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+.results_description {
+  text-align: center;
+  font-family: "asap", sans-serif;
+  font-weight: normal;
+  color: #5e6472;
+  font-size: 1.5em;
+}
+
+.sec_headers {
+  font-family: "asap", sans-serif;
+  font-size: 5em;
+  color: #ffa69e;
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  color: #5e6472;
+  font-size: 2em;
+  font-family: "asap", sans-serif;
+  line-height: 1.1em;
+  letter-spacing: 0.1rem;
+}
+body {
+  background-color: #faf3dd;
+
+  padding: 0.5em 20.5em;
+}

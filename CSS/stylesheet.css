@@ -1,5 +1,4 @@
 .herName {
-  font-size: 3em;
   text-align: center;
   position: absolute;
   top: 50%;
@@ -8,53 +7,105 @@
   transform: translate(-50%, -50%);
 }
 
-body {
-  padding: 0;
-  margin: 0;
-  background: #faf3dd;
-  
-  
-  font-family: "Asap", sans-serif;
-}
-
-.main_headers {
-  color: #ffa69e;
-}
-
-.subtitle {
-  color: #5e6472;
-  line-height: 10px;
-}
-
-.home_page {
-  padding: 33em;
-}
-
-.upload_page {
-  position: relative top; 
-  margin: top; 
+.empower {
+  text-align: center;
+  padding: 0.5em 20.5em;
 }
 
 .uploads {
   font-family: "Asap", sans-serif;
-    
+  text-align: center;
+  padding: 0.5em;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: #faf3dd;
+  background-image: linear-gradient(#faf3dd, #fceba6);
+
+  font-family: "Asap", sans-serif;
+}
+
+.main_headers {
+  font-size: 10em;
+  color: #ffa69e;
+}
+.subtitle {
+  font-size: 3em;
+  color: #5e6472;
+  line-height: 1.1em;
+  letter-spacing: 0.1rem;
+}
+
+.sec_headers {
+  font-size: 5em;
+  color: #ffa69e;
+}
+
+.normal_txt {
+  font-size: 1.9em;
+  color: #5e6472;
+}
+
+.home_page {
+  padding: 31em;
+}
+
+.results_page {
+  text-align: center;
+}
+
+.upload_image {
+  font-family: "Asap", sans-serif;
+  padding: 5em;
+}
+
+.upload_text {
+  font-size: 40px;
+  font-family: "Asap", sans-serif;
+  position: fixed;
+}
+
+input[type="file"] {
+  color: green;
+  padding: 5em 15em;
+}
+
+.picture_result {
+  width: 300px;
+  height: 200px;
+  font-weight: lighter;
+  font-family: "asap", sans-serif;
+}
+
+.results_description {
+  text-align: left;
+  font-family: "asap", sans-serif;
+  font-weight: normal;
+}
+
+input[type="submit"] {
+  width: 250px;
+  color: #5e6472;
+
+  padding: 10px 15px;
+  font-size: large;
+  font-weight: bold;
+  margin: 3px 2px;
+  position: center;
+  background-color: #ffa69e;
+  font-family: "Asap", sans-serif;
+  text-align: center;
+  border-radius: 14px;
+  border-color: #ffa69f;
 }
 
 label {
-    color: red; 
-    font-size: 16px;
+  color: red;
+  font-size: 16px;
 }
 
 .section {
-  padding: 2rem 0 4rem; 
-} 
-
-input {
-  width: 100%;
-  color: blue; 
+  padding: 2rem 0 4rem;
 }
-
- .section 
-{
-  padding: 2rem 0 4rem; 
-} 

@@ -20,39 +20,54 @@
 </head>
 
 <body>
-    <section class = "home_page"> 
-        <div>
-            <h1 class="main_headers">Her Name</h1>
-            <p class="subtitle">Empower.&emsp;&emsp;Connect.&emsp;&emsp;Learn.</p>
-        </div>
-    </section>
-
     <main>
-    <section class = "home page" id = "home"> 
+    <section class = "home_page" id = "home"> 
         <div class = "herName">
-            <h1>Her Name</h1>
-            <p>Empower. Connect. Learn</p>
+            <h1 class ="main_headers">Her Name</h1>
+            <p class = "subtitle">Empower.&emsp;&emsp;Connect.&emsp;&emsp;Learn.</p>
         </div>
-      </section>
 
-  <section class = "description page" id = "descriptiom"> 
-        
     </section>
 
-    <section class = "upload_page" id = "upload"> 
+    <section class = "description page" id = "description"> 
+        <div class = "empower">
+            <h2 class ="sec_headers">empower</h2>
+            <p class ="normal_txt">
+                Everyone knows of the story of how Mark Zuckerberg created Facebook in his college dorm.
+                This story is in itself astonishing - yet, there is less heard about the world's first computer programmer named Ada Lovelace.
+            </p>
+
+            <p class ="normal_txt">
+                Continue through our site to learn more about female tech innovators and entrepreneurs that often go unheard
+                of today through a simple upload of a photo.
+            </p>
+
+            <p class ="normal_txt">
+                You will then be connected to a noteable female tech innovator and entrepreneur. Learn more about her
+                and share your newfound knowledge with others.
+            </p>
+        </div>
+    </section>
+
+    <section class = "upload_page" > 
         <div class ="uploads">
-            <form action="index.php" method="post" enctype = "multipart/form-data"> 
-                <label for ="image"> Upload Image: </label>
+            <h2 class ="sec_headers">connect</h2>
+            <p class ="normal_txt">
+                Upload a photo of yourself here and see who you match up with.
+            </p>
+            <form action="results.html" method="post" enctype = "multipart/form-data"> 
+                <p class=upload_image>
+                <label for ="image"> 
+
+                </label>
+
                 <input type ="file" name="file1" >
-    
+
                 <input type ="submit"  value="See Results!" >
+                </p>
             </form>
-        </div>
-    </section>
-
-    <section class = "results page" id = "results"> 
-
-    </section>
+       </div>
+    </section> 
 
   </main>
 
