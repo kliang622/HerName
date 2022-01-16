@@ -7,34 +7,48 @@
 
   transform: translate(-50%, -50%);
 }
+
 body {
   padding: 0;
   margin: 0;
   background: #faf3dd;
   
   
-  
-
   font-family: "Asap", sans-serif;
 }
 
-.upload_page
-{
+.main_headers {
+  color: #ffa69e;
+}
+
+.subtitle {
+  color: #5e6472;
+  line-height: 10px;
+}
+
+.home_page {
+  padding: 33em;
+}
+
+.upload_page {
   position: relative top; 
   margin: top; 
-
 }
-label
-{
-    color: red; 
-    font-size: 16px;
-    
 
-}
 .uploads {
   font-family: "Asap", sans-serif;
     
 }
+
+label {
+    color: red; 
+    font-size: 16px;
+}
+
+.section {
+  padding: 2rem 0 4rem; 
+} 
+
 input {
   width: 100%;
   color: blue; 
